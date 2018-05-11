@@ -43,15 +43,13 @@ function createMarker(address) {
     if (status !== google.maps.places.PlacesServiceStatus.OK)
       return;
 
-    placeMarker(map, results[0].geometry.location)
+    placeMarker(map, results[0].geometry.location, address)
   }
 
-  placeService.textSearch({
-      query: address
-  }, setMarker);
+  placeService.textSearch({ query: address }, setMarker);
 }
 
-function placeMarker(map, position) {
+function placeMarker(map, position, address=null) {
   const getMarker = function(map, position) {
     return new google.maps.Marker({
   		position: position,
@@ -88,7 +86,7 @@ function placeMarker(map, position) {
       } else if (buildMode) {
         remembered = marker;
       } else {
-        infoWindow.setContent('<div>' + placesInfo + '</div>');
+        infoWindow.setContent('<div>' + (address || placesInfo) + '</div>');
         infoWindow.open(map, this);
       }
     });
