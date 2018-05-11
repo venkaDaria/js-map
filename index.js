@@ -33,8 +33,22 @@ function initMap() {
   }
 
   function geolocationFailure(positionError) {
+    console.log(positionError)
   	alert("Ваш браузер не поддерживает геолокацию");
   }
+}
+
+function createMarker(address) {
+  const setMarker = function(results, status) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK)
+      return;
+
+    placeMarker(map, results[0].geometry.location)
+  }
+
+  placeService.textSearch({
+      query: address
+  }, setMarker);
 }
 
 function placeMarker(map, position) {
@@ -107,6 +121,13 @@ function placeMarker(map, position) {
       location: position,
       radius: '500',
   }, buildInfoWindow);
+}
+
+function search(elem) {
+    if(event.key === 'Enter') {
+        createMarker(elem.value);
+        elem.value = ""
+    }
 }
 
 function changeMode(mode) {

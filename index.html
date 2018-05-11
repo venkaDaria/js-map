@@ -14,25 +14,30 @@
       async defer></script>
   </head>
   <body>
-    <div class="container flex-container">
-      <div class="container flex-left" id="mapSurface"></div>
-      <div class="container flex-right flex-container-column">
-        <input type="button" class="btn btn-primary" value="Режим маркеров"
-          onclick="changeMode(false)"/>
-        <input type="button" class="btn btn-primary" value="Режим маршрутов"
-          onclick="changeMode(true)"/>
-        <input type="button" class="btn btn-warning" value="Скрыть маркеры"
-          onclick="hideMarkers()"/>
-        <input type="button" class="btn btn-warning" value="Показать маркеры"
-          onclick="showMarkers()"/>
-        <input type="button" class="btn btn-warning" value="Скрыть маршруты"
-          onclick="hideRoutes()"/>
-        <input type="button" class="btn btn-warning" value="Показать маршруты"
-          onclick="showRoutes()"/>
-        <input type="button" class="btn btn-danger" value="Удалить маршруты"
-          onclick="clearRoutes()"/>
-        <input type="button" class="btn btn-danger" value="Сбросить всё"
-          onclick="clearAll()"/>
+    <div class="container flex-container-column">
+      <div class="input-group">
+        <input class="form-control" placeholder="Введите адрес" onkeydown="search(this)"/>
+      </div>
+      <div class="container flex-container">
+        <div class="container flex-left" id="mapSurface"></div>
+        <div class="container flex-right flex-container-column">
+          <input type="button" class="btn btn-primary" value="Режим маркеров"
+            onclick="changeMode(false)"/>
+          <input type="button" class="btn btn-primary" value="Режим маршрутов"
+            onclick="changeMode(true)"/>
+          <input type="button" class="btn btn-warning" value="Скрыть маркеры"
+            onclick="hideMarkers()"/>
+          <input type="button" class="btn btn-warning" value="Показать маркеры"
+            onclick="showMarkers()"/>
+          <input type="button" class="btn btn-warning" value="Скрыть маршруты"
+            onclick="hideRoutes()"/>
+          <input type="button" class="btn btn-warning" value="Показать маршруты"
+            onclick="showRoutes()"/>
+          <input type="button" class="btn btn-danger" value="Удалить маршруты"
+            onclick="clearRoutes()"/>
+          <input type="button" class="btn btn-danger" value="Сбросить всё"
+            onclick="clearAll()"/>
+        </div>
       </div>
     </div>
   </body>
