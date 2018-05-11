@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100vh;
+}
+
+.flex-left {
+  flex: 0.8;
+}
+
+.flex-right {
+  flex: 0.2;
+}
+
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+input {
+  margin: 10px;
+}
